@@ -4,10 +4,11 @@ name: CI booking
 
 on:
  
-  push:
-    branches: [ main ]
   pull_request:
-    branches: [ main ]
+    types:
+      - opened
+    branches:
+       - 'releases/**'
 
  
 jobs:
