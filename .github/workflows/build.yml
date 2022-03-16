@@ -3,20 +3,13 @@
 name: CI booking
 
 on:
- 
   pull_request:
-    types:
-      - opened
     branches:
-       - 'releases/**'
+       - develop
 
- 
 jobs:
    build:
-   
     runs-on: ubuntu-latest
-
-   
     steps:
       - uses: actions/checkout@v2
       - name: Set up JDK 11
@@ -29,5 +22,3 @@ jobs:
         run: mvn --batch-mode --update-snapshots verify
       - name: Run Unit Tests
         run: mvn test  
-
-  
